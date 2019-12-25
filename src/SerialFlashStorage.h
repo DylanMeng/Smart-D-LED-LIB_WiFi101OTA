@@ -24,7 +24,7 @@
 #include "OTAStorage.h"
 
 #define SERIAL_FLASH_BUFFER_SIZE    64
-#define SERIAL_FLASH_CS             5
+#define SERIAL_FLASH_CS             10
 
 class SerialFlashStorageClass : public OTAStorage {
 public:

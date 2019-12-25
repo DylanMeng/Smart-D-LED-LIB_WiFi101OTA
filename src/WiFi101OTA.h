@@ -25,7 +25,7 @@
 #include "WiFiUdp.h"
 
 #include "OTAStorage.h"
-#include "SDStorage.h"
+//#include "SDStorage.h"
 #include "InternalStorage.h"
 #include "SerialFlashStorage.h"
 
