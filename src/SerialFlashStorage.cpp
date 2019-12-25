@@ -63,7 +63,8 @@ void SerialFlashStorageClass::clear()
 void SerialFlashStorageClass::apply()
 {
   // just reset, SDU copies the data to flash
-  NVIC_SystemReset();
+  //NVIC_SystemReset(); (Reset will be called via the GUI)
+	return;
 }
 
 SerialFlashStorageClass SerialFlashStorage;

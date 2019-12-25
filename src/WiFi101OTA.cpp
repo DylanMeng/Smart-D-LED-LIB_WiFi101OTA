@@ -77,7 +77,7 @@ WiFiOTAClass::WiFiOTAClass() :
 void WiFiOTAClass::begin(const char* name, const char* password, OTAStorage& storage)
 {
   _name = name;
-  _expectedAuthorization = "Basic " + base64Encode("arduino:" + String(password));
+  _expectedAuthorization = "Basic " + base64Encode("smartdled:" + String(password));
   _storage = &storage;
 
   _server.begin();
@@ -268,7 +268,7 @@ void WiFiOTAClass::pollServer()
       }
     } while (header != "");
 	 
-    if (request != "POST /sketch HTTP/1.1") {
+    if (request != "POST /update HTTP/1.1") {
       flushRequestBody(client, contentLength);
       sendHttpResponse(client, 404, "Not Found");
       return;
