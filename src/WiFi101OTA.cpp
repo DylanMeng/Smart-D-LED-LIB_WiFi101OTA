@@ -316,9 +316,9 @@ void WiFiOTAClass::pollServer()
       delay(500);
 
       // apply the update
-      _storage->apply();
+      //_storage->apply();
+	  return; // Update is on the SPI flash
       
-      while (true);
     } else {
 
       sendHttpResponse(client, 414, "Payload size wrong");
@@ -327,6 +327,8 @@ void WiFiOTAClass::pollServer()
       delay(500);
 
       client.stop();
+
+	  return;
     }
   }
 }
